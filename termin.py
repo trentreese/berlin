@@ -3,8 +3,14 @@ import time
 import datetime
 import calendar
 from bs4 import BeautifulSoup as bs
+
+# populate the anliegen with the corresponding number appended to each url here: https://service.berlin.de/dienstleistungen/
 anliegen = "324269" # "120686", "324269"
+
+# page defaults to 2 months, if you want to paginate to further months you can put the start date here. 
 date_filter = datetime.date(2020,10,1)
+
+# locations are hardcoded, note that not every amt is available for every appointment, will error if you look for the wrong amt/leistung combination
 locations = {
   "Charlottenburg": "122210,122217,122219,122227",
   "Kreuzberg": "122231,122238,122243",
